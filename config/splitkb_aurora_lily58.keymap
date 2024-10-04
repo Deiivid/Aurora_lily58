@@ -28,9 +28,9 @@
             tap-ms = <1>;
         };
 
-        UpDownScreen: UpDownScreen {
+        Up_Down: Up_Down {
             compatible = "zmk,behavior-sensor-rotate";
-            label = "UPDOWNSCREEN";
+            label = "UP_DOWN";
             #sensor-binding-cells = <0>;
             bindings = <&kp UP_ARROW>, <&kp DOWN_ARROW>;
         };
@@ -40,6 +40,22 @@
             label = "ZOOM";
             #sensor-binding-cells = <0>;
             bindings = <&kp LC(PLUS)>, <&kp LC(MINUS)>;
+        };
+
+        left_right: left_right {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "LEFT_RIGHT";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp RIGHT>, <&kp LEFT>;
+        };
+
+        select_sentences: select_sentences {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "SELECT_SENTENCES";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp LS(DOWN_ARROW)>, <&kp LS(UP_ARROW)>;
+
+            tap-ms = <1>;
         };
     };
 
@@ -62,7 +78,7 @@
                                   &kp LALT  &kp LGUI  &mo 1   &kp SPACE        &kp DELETE  &mo 2   &kp RIGHT_ALT  &kp RGUI
             >;
 
-            sensor-bindings = <&selectLanes>, <&UpDownScreen>;
+            sensor-bindings = <&Up_Down>, <&left_right>;
         };
 
         lower_layer {
@@ -74,14 +90,14 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&kp F1     &kp F2                &kp F3                 &kp F4        &kp F5             &kp F6                       &kp F7  &kp F8    &kp F9        &kp F10         &kp F11          &kp F12
-&none      &kp RA(LEFT_BRACKET)  &kp RA(RIGHT_BRACKET)  &kp RA(APOS)  &kp RA(BACKSLASH)  &none                        &none   &none     &none         &none           &none            &none
-&kp GRAVE  &kp EXCL              &kp AT                 &kp HASH      &kp DOLLAR         &kp PRCNT                    &none   &kp LEFT  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none
-&trans     &kp LESS_THAN         &kp GREATER_THAN       &none         &trans             &trans     &trans    &trans  &trans  &none     &none         &none           &none            &none
-                                                        &trans        &trans             &trans     &trans    &trans  &trans  &trans    &trans
+&kp F1     &kp F2                &kp F3                 &kp F4        &kp F5             &kp F6                             &kp F7       &kp F8      &kp F9        &kp F10         &kp F11          &kp F12
+&none      &kp RA(LEFT_BRACKET)  &kp RA(RIGHT_BRACKET)  &kp RA(APOS)  &kp RA(BACKSLASH)  &none                              &kp LS(F10)  &kp LS(F9)  &none         &none           &none            &none
+&kp GRAVE  &kp EXCL              &kp AT                 &kp HASH      &kp DOLLAR         &kp PRCNT                          &none        &kp LEFT    &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none
+&trans     &kp LESS_THAN         &kp GREATER_THAN       &none         &trans             &trans     &kp LC(C)    &kp LC(V)  &trans       &none       &none         &none           &none            &none
+                                                        &trans        &trans             &trans     &trans       &trans     &trans       &trans      &trans
             >;
 
-            sensor-bindings = <&volumen>, <&none>;
+            sensor-bindings = <&selectLanes>, <&select_sentences>;
         };
 
         raise_layer {
@@ -93,14 +109,14 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&bt BT_SEL 0  &none  &none  &none  &none  &none                  &none  &none  &none  &none  &none  &none
-&bt BT_SEL 1  &none  &none  &none  &none  &none                  &none  &none  &none  &none  &none  &none
-&bt BT_SEL 2  &none  &none  &none  &none  &none                  &none  &none  &none  &none  &none  &none
-&bt BT_CLR    &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none  &kp BSLH
-                            &none  &none  &none  &none    &none  &none  &none  &none
+&bt BT_SEL 0  &none  &none  &none  &none  &none                  &none              &none         &kp LC(LA(L))  &kp LC(LA(O))  &none  &none
+&bt BT_SEL 1  &none  &none  &none  &none  &none                  &kp LC(LS(SLASH))  &kp LC(STAR)  &none          &none          &none  &none
+&bt BT_SEL 2  &none  &none  &none  &none  &none                  &none              &none         &none          &none          &none  &none
+&bt BT_CLR    &none  &none  &none  &none  &none  &none    &none  &none              &none         &none          &none          &none  &kp BSLH
+                            &none  &none  &none  &none    &none  &none              &none         &none
             >;
 
-            sensor-bindings = <&zoom>, <&inc_dec_kp LC(D) LC(TAB)>;
+            sensor-bindings = <&volumen>, <&zoom>;
         };
     };
 };
