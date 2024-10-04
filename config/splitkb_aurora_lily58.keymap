@@ -23,7 +23,23 @@
             compatible = "zmk,behavior-sensor-rotate";
             label = "SCROLLUPDOWN";
             #sensor-binding-cells = <0>;
-            bindings = <&kp K_SCROLL_UP>, <&kp K_SCROLL_DOWN>;
+            bindings = <&kp C_AC_SCROLL_UP>, <&kp C_AC_SCROLL_DOWN>;
+        };
+
+        selectLanes: selectLanes {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "SELECTLANES";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp LS(RC(RIGHT_ARROW))>, <&kp LS(LEFT_ARROW)>;
+
+            tap-ms = <1>;
+        };
+
+        UpDownScreen: UpDownScreen {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "UPDOWNSCREEN";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp UP_ARROW>, <&kp DOWN_ARROW>;
         };
     };
 
@@ -46,7 +62,7 @@
                                   &kp LALT  &kp LGUI  &mo 1   &kp SPACE        &kp DELETE  &mo 2   &kp RIGHT_ALT  &kp RGUI
             >;
 
-            sensor-bindings = <&volumen>, <&ScrollUPDown>;
+            sensor-bindings = <&selectLanes>, <&UpDownScreen>;
         };
 
         lower_layer {
@@ -65,9 +81,7 @@
                                                         &trans        &trans             &trans     &trans    &trans  &trans  &trans    &trans
             >;
 
-            sensor-bindings =
-                <&inc_dec_kp C B>,
-                <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
+            sensor-bindings = <&volumen>, <&ScrollUPDown>;
         };
 
         raise_layer {
