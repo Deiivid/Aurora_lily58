@@ -90,10 +90,10 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&kp F1     &kp F2                &kp F3                 &kp F4        &kp F5             &kp F6                             &kp F7       &kp F8      &kp F9        &kp F10         &kp F11          &kp F12
-&none      &kp RA(LEFT_BRACKET)  &kp RA(RIGHT_BRACKET)  &kp RA(APOS)  &kp RA(BACKSLASH)  &none                              &kp LS(F10)  &kp LS(F9)  &none         &none           &none            &none
-&kp GRAVE  &kp EXCL              &kp AT                 &kp HASH      &kp DOLLAR         &kp PRCNT                          &none        &kp LEFT    &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none
-&trans     &kp LESS_THAN         &kp GREATER_THAN       &none         &trans             &trans     &kp LC(C)    &kp LC(V)  &trans       &none       &none         &none           &none            &none
+&kp F1     &kp F2                &kp F3                 &kp F4        &kp F5             &kp F6                             &kp F7       &kp F8      &kp F9        &kp F10    &kp F11  &kp F12
+&none      &kp RA(LEFT_BRACKET)  &kp RA(RIGHT_BRACKET)  &kp RA(APOS)  &kp RA(BACKSLASH)  &none                              &kp LS(F10)  &kp LS(F9)  &kp UP_ARROW  &none      &none    &none
+&kp GRAVE  &kp EXCL              &kp AT                 &kp HASH      &kp DOLLAR         &kp PRCNT                          &none        &kp LEFT    &kp DOWN      &kp RIGHT  &none    &none
+&trans     &kp LS(COMMA)         &kp LS(DOT)            &none         &trans             &trans     &kp LC(C)    &kp LC(V)  &trans       &none       &none         &none      &none    &none
                                                         &trans        &trans             &trans     &trans       &trans     &trans       &trans      &trans
             >;
 
@@ -109,11 +109,11 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&bt BT_SEL 0  &none  &none  &none  &none  &none                  &none              &none               &kp LC(LA(L))  &kp LC(LA(O))  &none  &none
-&bt BT_SEL 1  &none  &none  &none  &none  &none                  &kp LC(LS(SLASH))  &kp LC(STAR)        &none          &none          &none  &none
-&bt BT_SEL 2  &none  &none  &none  &none  &none                  &none              &none               &none          &none          &none  &none
-&bt BT_CLR    &none  &none  &none  &none  &none  &none    &none  &kp LS(EQUAL)      &kp LS(UNDERSCORE)  &none          &none          &none  &kp BSLH
-                            &none  &none  &none  &none    &none  &none              &none               &none
+&bt BT_SEL 0  &none  &none  &none  &none  &none                  &none              &none          &kp LC(LA(L))  &kp LC(LA(O))  &none  &none
+&bt BT_SEL 1  &none  &none  &none  &none  &none                  &kp LC(LS(SLASH))  &kp LC(STAR)   &none          &none          &none  &none
+&bt BT_SEL 2  &none  &none  &none  &none  &none                  &none              &none          &none          &none          &none  &none
+&bt BT_CLR    &none  &none  &none  &none  &none  &none    &none  &kp LS(EQUAL)      &kp LS(MINUS)  &none          &none          &none  &kp BSLH
+                            &none  &none  &none  &none    &none  &none              &none          &none
             >;
 
             sensor-bindings = <&volumen>, <&zoom>;
