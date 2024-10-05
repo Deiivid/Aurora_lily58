@@ -39,7 +39,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             label = "ZOOM";
             #sensor-binding-cells = <0>;
-            bindings = <&kp LC(PLUS)>, <&kp LC(MINUS)>;
+            bindings = <&kp LC(K_SCROLL_UP)>, <&kp LC(K_SCROLL_DOWN)>;
         };
 
         left_right: left_right {
@@ -78,7 +78,7 @@
                                   &kp LALT  &kp LGUI  &mo 1   &kp SPACE        &kp DELETE  &mo 2   &kp RIGHT_ALT  &kp RGUI
             >;
 
-            sensor-bindings = <&Up_Down>, <&left_right>;
+            sensor-bindings = <&volumen>, <&left_right>;
         };
 
         lower_layer {
@@ -109,14 +109,14 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&bt BT_SEL 0  &none  &none  &none  &none  &none                  &none              &none          &kp LC(LA(L))  &kp LC(LA(O))  &none  &none
-&bt BT_SEL 1  &none  &none  &none  &none  &none                  &kp LC(LS(SLASH))  &kp LC(STAR)   &none          &none          &none  &none
-&bt BT_SEL 2  &none  &none  &none  &none  &none                  &none              &none          &none          &none          &none  &none
-&bt BT_CLR    &none  &none  &none  &none  &none  &none    &none  &kp LS(EQUAL)      &kp LS(MINUS)  &none          &none          &none  &kp BSLH
-                            &none  &none  &none  &none    &none  &none              &none          &none
+&bt BT_SEL 0  &none  &none  &none  &none  &none                  &none                  &none                  &kp LC(LA(L))  &kp LC(LA(O))  &none  &none
+&bt BT_SEL 1  &none  &none  &none  &none  &none                  &kp LC(LS(KP_DIVIDE))  &kp LC(LS(KP_DIVIDE))  &none          &none          &none  &none
+&bt BT_SEL 2  &none  &none  &none  &none  &none                  &none                  &none                  &none          &none          &none  &none
+&bt BT_CLR    &none  &none  &none  &none  &none  &none    &none  &kp LS(EQUAL)          &kp LS(MINUS)          &none          &none          &none  &kp BSLH
+                            &none  &none  &none  &none    &none  &none                  &none                  &none
             >;
 
-            sensor-bindings = <&volumen>, <&zoom>;
+            sensor-bindings = <&Up_Down>, <&zoom>;
         };
     };
 };
