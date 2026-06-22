@@ -4,10 +4,11 @@
  * SPDX-License-Identifier: MIT
  */
 
+#include <dt-bindings/zmk/mouse.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/pointing.h>
 
 / {
     behaviors {
@@ -91,10 +92,10 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&kp F1     &kp F2                &kp F3                 &kp F4        &kp F5             &kp F6                             &kp F7       &kp F8      &kp F9        &kp F10    &kp F11  &kp F12
-&none      &kp RA(LEFT_BRACKET)  &kp RA(RIGHT_BRACKET)  &kp RA(APOS)  &kp RA(BACKSLASH)  &none                              &kp LS(F10)  &kp LS(F9)  &kp UP_ARROW  &none      &none    &none
-&kp GRAVE  &kp EXCL              &kp AT                 &kp HASH      &kp DOLLAR         &kp PRCNT                          &none        &kp LEFT    &kp DOWN      &kp RIGHT  &none    &none
-&trans     &kp LS(COMMA)         &kp LS(DOT)            &none         &trans             &trans     &kp LC(C)    &kp LC(V)  &trans       &none       &none         &none      &none    &none
+&kp F1     &kp F2                &kp F3                 &kp F4        &kp F5             &kp F6                             &kp F7       &kp F8      &kp F9        &kp F10    &kp F11   &kp F12
+&none      &kp RA(LEFT_BRACKET)  &kp RA(RIGHT_BRACKET)  &kp RA(APOS)  &kp RA(BACKSLASH)  &none                              &kp LS(F10)  &kp LS(F9)  &kp UP_ARROW  &none      &kp NUBS  &kp LS(NUBS)
+&kp GRAVE  &kp EXCL              &kp AT                 &kp HASH      &kp DOLLAR         &kp PRCNT                          &none        &kp LEFT    &kp DOWN      &kp RIGHT  &none     &none
+&trans     &kp LS(COMMA)         &kp LS(DOT)            &none         &trans             &trans     &kp LC(C)    &kp LC(V)  &trans       &none       &none         &none      &none     &none
                                                         &trans        &trans             &trans     &trans       &trans     &trans       &trans      &trans
             >;
 
@@ -110,11 +111,11 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&bt BT_SEL 0  &none         &bt BT_PRV  &bt BT_NXT  &none           &bt BT_DISC 0                          &none              &none                  &kp LC(LA(L))  &kp LC(LA(O))  &none  &none
-&bt BT_SEL 1  &none         &none       &none       &none           &bt BT_DISC 1                          &kp LC(KP_DIVIDE)  &kp LC(LS(KP_DIVIDE))  &none          &none          &none  &none
-&bt BT_SEL 2  &bt BT_SEL 4  &none       &none       &none           &bt BT_DISC 2                          &none              &none                  &none          &mkp MB1       &none  &none
-&bt BT_SEL 3  &none         &none       &none       &none           &none          &mkp LCLK    &mkp RCLK  &kp LS(EQUAL)      &kp LS(MINUS)          &none          &none          &none  &kp BSLH
-                                        &bt BT_CLR  &bt BT_CLR_ALL  &none          &none        &none      &none              &none                  &none
+&bt BT_SEL 0  &none       &none  &none       &kp LG(LS(N4))  &kp LG(LS(N5))                          &none              &none                  &kp LC(LA(L))  &kp LC(LA(O))  &none  &none
+&bt BT_SEL 1  &none       &none  &none       &none           &none                                   &kp LC(KP_DIVIDE)  &kp LC(LS(KP_DIVIDE))  &none          &none          &none  &kp SPACE
+&bt BT_SEL 2  &none       &none  &none       &none           &none                                   &none              &none                  &none          &mkp MB1       &none  &none
+&bt BT_NXT    &bt BT_PRV  &none  &none       &none           &none           &mkp LCLK    &mkp RCLK  &kp LS(EQUAL)      &kp LS(MINUS)          &none          &none          &none  &kp BSLH
+                                 &bt BT_CLR  &bt BT_CLR_ALL  &none           &none        &none      &none              &none                  &none
             >;
 
             sensor-bindings = <&volumen>, <&zoom>;
